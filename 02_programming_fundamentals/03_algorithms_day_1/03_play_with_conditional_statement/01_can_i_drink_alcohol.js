@@ -31,7 +31,7 @@ if (frieda.age >=18)
   canFriedaDrinkAlcohol = true;
 }
 
-//Version simplifié car pas de TRUE ou FALSE. 
+//Version simplifié car pas de TRUE ou FALSE.
 //const francis = {age:17,name:"Francis"};
 //const frieda = {age:22, name:"Frieda"};
 

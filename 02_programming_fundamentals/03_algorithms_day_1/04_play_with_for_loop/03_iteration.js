@@ -4,3 +4,7 @@
 // -  Using `length`, write on `stdout` each values of the table.
 
 const litteralDigits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
+for(let  stdout = 0; stdout <= litteralDigits.length; stdout++) {
+  stdout.write(litteralDigits[stdout]);
+}
