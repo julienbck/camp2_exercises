@@ -8,8 +8,26 @@
    - otherwise, the value is preserved.
 */
 
-function fizzBuzz(list) {
+function fizzBuzz(numbers) {
+  const fizzbuzzedNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
 
+    if (numbers[i] % 5 === 0 && numbers[i] % 3 === 0) {
+      fizzbuzzedNumbers.push("FizzBuzz");
+    }else if (numbers[i] % 5 === 0) {
+      fizzbuzzedNumbers.push("Buzz");
+    }else if (numbers[i] % 3 === 0){
+      fizzbuzzedNumbers.push("Fizz");
+    }
+    else {
+      fizzbuzzedNumbers.push(numbers[i]);
+
+    }
+  }
+
+
+
+  return fizzbuzzedNumbers;
 }
 
 
