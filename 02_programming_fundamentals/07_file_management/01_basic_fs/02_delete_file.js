@@ -10,9 +10,8 @@ function deleteFile(){
     if(error) {
       console.warn(error);
     }
-  console.log("You're file are deleted");
+    console.log("You're file are deleted");
   });
-
 }
 
 deleteFile();
