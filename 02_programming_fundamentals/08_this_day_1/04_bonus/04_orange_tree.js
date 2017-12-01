@@ -19,6 +19,7 @@ const orangeTree = {
       this.alive = false;
     }
 
+
     if (this.age < 10) {
       this.height = this.height + 25;
     } else if (this.age >= 10 && this.age < 20) {
@@ -34,12 +35,13 @@ const orangeTree = {
     } else if (this.age >= 40 && this.age <= 100) {
       this.oranges = 0;
     }
-    if (this.age < 100 && this.age > 50 ){
+
+    if ( this.age >= (Math.floor(Math.random() * 100) + 50  ) ){
       this.alive = false;
     }
   },
   pickAnOrange: function() {
-    if (this.oranges > 0){ // si par exemple on avait mis !== sauf que si on avait -5 par
+    if (this.oranges > 0){ // si par exemple on avait mis !== et que l'on avait -5 par
       // et bien on pourra quand même retirer des oranges alors qu'il n'y en a plus !!
       this.oranges = this.oranges - 1;
       return true;
