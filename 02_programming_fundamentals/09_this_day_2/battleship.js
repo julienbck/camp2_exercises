@@ -28,9 +28,7 @@ function renderCell(cell) {
 
 function renderRow(number) {
   const cells = battleGrid[number];
-
   const row = cells.map(renderCell).join("  ");
-
   return ` ${number}  ${row}`;
 }
 
