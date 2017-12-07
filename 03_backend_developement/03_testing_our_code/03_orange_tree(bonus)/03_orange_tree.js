@@ -56,5 +56,6 @@ const orangeTree = {
     this.oranges = 0;
   }
 };
+console.log(orangeTree);
 
 module.exports = orangeTree;
