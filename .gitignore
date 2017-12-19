@@ -3,3 +3,5 @@ node_modules
 /*.weather
 /*.env.var
 .env.var
+/*.mp4
+videocv.mp4
