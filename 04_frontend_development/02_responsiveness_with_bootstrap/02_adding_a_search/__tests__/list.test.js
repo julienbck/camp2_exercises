@@ -42,9 +42,10 @@ test("typing 'ai' should gives five results", async () => {
       )
     )
     .run();
-  expect(result.length).toEqual(5);
+  expect(result.length).toEqual(6);
   expect(result).toEqual([
     "AIN",
+    "AISNE",
     "ILE-ET-VILAINE",
     "MAINE-ET-LOIRE",
     "PAS-DE-CALAIS",

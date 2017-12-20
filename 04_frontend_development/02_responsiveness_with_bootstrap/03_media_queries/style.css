@@ -1,0 +1,29 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  height: auto;
+}
+
+#pokemon-evolution {
+  width: 475px;
+  height: 475px;
+  background-image: url('./charizard.png');
+}
+
+@media (min-width: 501px) and (max-width: 800px) {
+  #pokemon-evolution {
+    width: 475px;
+    height: 475px;
+    background-image: url('./charmeleon.png');
+  }
+
+}
+@media (max-width: 500px) {
+  #pokemon-evolution {
+    width: 475px;
+    height: 475px;
+    background-image: url('./charmander.png');
+  }
+
+}

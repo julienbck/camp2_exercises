@@ -27,8 +27,9 @@
     </div>
     <script src="./departments.js"></script>
     <script>
-      // Your code here
-      // the departments are accessible in a global variable named DEPARTMENTS
+    for (let i = 0; i < DEPARTMENTS.length; i++) {
+    document.getElementById("department-list").innerHTML +=  "<li>"+DEPARTMENTS[i]+"</li>";
+    }
     </script>
   </body>
 </html>

@@ -101,7 +101,11 @@ const DEPARTMENTS = [
   "MARTINIQUE",
   "RÉUNION"
 ];
-
+// for (let i = 0; i < DEPARTMENTS.length; i++) {
+//   document.querySelector(selector)
+//   document.write(
+//     "<li>" + DEPARTMENTS[i] + "</li>");
+// }
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = DEPARTMENTS;
 }

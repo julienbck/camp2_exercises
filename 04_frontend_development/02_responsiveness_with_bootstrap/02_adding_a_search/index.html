@@ -18,7 +18,7 @@
           <form>
             <div class="form-group">
               <label for="search-department">Search department</label>
-              <input type="text" class="form-control" id="search-department" />
+              <input type="text" class="form-control" id="search-department" placeholder="Type your department" />
             </div>
           </form>
         </div>
@@ -34,7 +34,11 @@
     </div>
     <script src="./departments.js"></script>
     <script>
-      // Your code here
+    displayDepartments(DEPARTMENTS)
+    const myInput = document.querySelector("#search-department");
+    myInput.addEventListener("input", function() {
+      displayDepartments(DEPARTMENTS.filter(departments => departments.includes(this.value.toUpperCase())));
+    });
     </script>
   </body>
 </html>
