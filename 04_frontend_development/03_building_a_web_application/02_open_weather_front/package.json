@@ -1,0 +1,22 @@
+{
+  "name": "02_weather_by_location",
+  "version": "1.0.0",
+  "description": "",
+  "main": "weatherByLocation.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "fetch": "^1.1.0",
+    "node-fetch": "^1.7.3",
+    "request": "^2.83.0"
+  }
+}
