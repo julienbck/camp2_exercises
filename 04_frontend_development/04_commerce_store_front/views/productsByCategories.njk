@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+    {% for productsListByCategories in importDataProductsByCategories %}
+
+
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="https://www.decathlon.fr/media/{{productsListByCategories.image_path}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">{{productsListByCategories.title}}</h4>
+            <p class="card-text">{{productsListByCategories.description}}</p>
+            <p class="card-text">{{productsListByCategories.min_price}} €</p>
+            <a href="/products/{{productsListByCategories.id}}" class="btn btn-dark">Voir le produit</a>
+          </div>
+          </div>
+        </div>
+
+
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+  {% block titleHeader %}Decathlon Products{% endblock %}

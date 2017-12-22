@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+
+
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="https://www.decathlon.fr/media/{{productsListByCategories.image_path}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">{{importDataProductsSingle.title}}</h4>
+            <p class="card-text">{{importDataProductsSingle.description}}</p>
+            <p class="card-text">{{importDataProductsSingle.min_price}} €</p>
+            <a href="/products" class="btn btn-dark">Voir le produit</a>
+          </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+  {% block titleHeader %}Decathlon Products{% endblock %}

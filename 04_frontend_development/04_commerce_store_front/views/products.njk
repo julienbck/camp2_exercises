@@ -1,0 +1,10 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+{% for productsList in importDataProducts %}
+<ul class="list-group col-sm-3 offset-xs-5">
+  <li class="list-group-item  bg-dark"><a style="text-decoration: none" class="text-white" href="">{{productsList.decathlon_id}}</a></li>
+
+</ul>
+{% endfor %}
+{% endblock %}
