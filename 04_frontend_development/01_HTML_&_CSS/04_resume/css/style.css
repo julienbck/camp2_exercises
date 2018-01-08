@@ -17,13 +17,13 @@ html, body{
   background-color: #2E2E2E;
 }
 #column1{
-  float: left;
+  order: 1;
   width: 50%;
   height: auto;
   overflow: auto;
 }
 #column2{
-  float: left;
+  order: 2;
   width: 50%;
   overflow: auto;
 }
