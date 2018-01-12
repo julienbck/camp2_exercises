@@ -17,10 +17,17 @@ class Board extends Component {
       ],
       turn: 'o',
       winner: null,
-      counterplayerx: 2,
-      counterplayero: 0,
+      counterplayer: {x: 0, o: 0}
     }
   }
+
+  count(winner) {
+    let counter = this.state.counterplayer;
+    counter[winner] = counter[winner] + 1;
+
+    return counter;
+  }
+
   updateBoard(loc, player){
     if(this.state.gameBoard[loc] === 'x' || this.state.gameBoard[loc] === 'o' || this.state.winner){
       //invalid move
@@ -35,64 +42,63 @@ class Board extends Component {
     if(topRow.match(/xxx|ooo/)){
       this.setState({
         winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
-      if (this.state.turn === 'x'){
-        this.setState({
-          counterplayerx: (this.state.counterplayerx) + 1
-        });
-      } else {
-        this.setState({
-          counterplayero: (this.state.counterplayero) + 1;
-        })
-      }
       return;
     }
     let middleRow = this.state.gameBoard[3] + this.state.gameBoard[4] + this.state.gameBoard[5];
     if(middleRow.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
     let bottomRow = this.state.gameBoard[6] + this.state.gameBoard[7] + this.state.gameBoard[8];
     if(bottomRow.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
     let leftCol = this.state.gameBoard[0] + this.state.gameBoard[3] + this.state.gameBoard[6];
     if(leftCol.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
     let middleCol = this.state.gameBoard[1] + this.state.gameBoard[4] + this.state.gameBoard[7];
     if(middleCol.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
     let rightCol = this.state.gameBoard[2] + this.state.gameBoard[5] + this.state.gameBoard[8];
     if(rightCol.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
     let leftDiag = this.state.gameBoard[0] + this.state.gameBoard[4] + this.state.gameBoard[8];
     if(leftDiag.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
     let rightDiag = this.state.gameBoard[2] + this.state.gameBoard[4] + this.state.gameBoard[6];
     if(rightDiag.match(/xxx|ooo/)){
       this.setState({
-        winner: this.state.turn
+        winner: this.state.turn,
+        counterplayer: this.count(this.state.turn)
       });
       return;
     }
@@ -153,8 +159,8 @@ class Board extends Component {
         <div className="InfoZone">
         <ResetButton reset={this.resetBoard.bind(this)}/>
         <button className="resetButton2"> Is to Player {this.state.turn}</button>
-        <button className="resetButton3"> Victory To Player X : {this.state.counterplayerx}</button>
-        <button className="resetButton3"> Victory To Player O : {this.state.counterplayero}</button>
+        <button className="resetButton3"> Victory To Player X : {this.state.counterplayer.x}</button>
+        <button className="resetButton3"> Victory To Player O : {this.state.counterplayer.o}</button>
         </div>
     </div>
   )}
