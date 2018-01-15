@@ -4,6 +4,7 @@ import Logo from './logo.gif'
 import Announcement from './Announcement.js';
 import ResetButton from './ResetButton.js';
 import Tile from './Tile.js';
+import ResetButtonScore from './ResetButtonScore.js';
 
 
 class Board extends Component {
@@ -134,6 +135,11 @@ class Board extends Component {
     winner: null
   });
   }
+  resetScores() {
+    this.setState({
+      counterplayer: {x: 0, o: 0}
+    })
+  }
   render() {
     return(
     <div className="container">
@@ -144,6 +150,7 @@ class Board extends Component {
         turn={this.state.turn}
         />
       </div>
+      <button className="ButtonToPlayerIs"> Is to Player {this.state.turn}</button>
       <div className="contentBoard">
       {this.state.gameBoard.map(function(value, i){
         return(
@@ -158,7 +165,7 @@ class Board extends Component {
         </div>
         <div className="InfoZone">
         <ResetButton reset={this.resetBoard.bind(this)}/>
-        <button className="resetButton2"> Is to Player {this.state.turn}</button>
+        <ResetButtonScore resetscore={this.resetScores.bind(this)}/>
         <button className="resetButton3"> Victory To Player X : {this.state.counterplayer.x}</button>
         <button className="resetButton3"> Victory To Player O : {this.state.counterplayer.o}</button>
         </div>

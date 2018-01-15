@@ -3,7 +3,7 @@ import './Board.css'
 
 function ResetButton(props){
     return(
-      <button className="resetButton" onClick={props.reset}>Reset</button>
+      <button className="resetButton" onClick={props.reset}>Reset GameBoard</button>
     );
   }
 

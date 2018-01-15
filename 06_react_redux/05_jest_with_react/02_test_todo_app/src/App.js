@@ -57,7 +57,7 @@ class App extends Component {
       <div className="Todo">
         <div className="new-todo">
           <form onSubmit={this.addTask}>
-            <input type="text" value={this.state.newTask} onChange={this.handleNewTask} />
+            <input className="inputToDo" type="text" value={this.state.newTask} onChange={this.handleNewTask} />
             <button type="submit">Add</button>
           </form>
         </div>
@@ -66,12 +66,13 @@ class App extends Component {
             <li key={task.id} className={task.completed ? "completed" : "task"}>
               <span>{task.label}</span>
               <input
+              className="checkboxToDisplayDelete"
                 type="checkbox"
                 value={task.completed}
                 onChange={() => this.updateTask(task.id)}
               />
               { task.completed
-                ? <input type="button" onClick={() => this.deleteTask(task.id)} value="delete" />
+                ? <input className="deleteButton" type="button" onClick={() => this.deleteTask(task.id)} value="delete" />
                 : null
               }
             </li>
