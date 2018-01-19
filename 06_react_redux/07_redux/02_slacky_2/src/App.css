@@ -18,8 +18,9 @@ html, body, #root {
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #1e3b5F;
+  height: auto;
+  width: 100%;
   padding: 20px;
   color: white;
 }
@@ -32,10 +33,6 @@ html, body, #root {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .Login {
   padding: 20px;
@@ -74,6 +71,7 @@ html, body, #root {
 
 .Chat-form input {
   flex: 1 0;
+  outline: none;
 }
 
 .Chat-form button {
@@ -84,14 +82,42 @@ html, body, #root {
   color: white;
   border: none;
   -webkit-appearance: none;
+  outline: none;
+}
+.Chat-form button:hover {
+  background-color: #FFF;
+  color:#007bff;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .message-container {
-  width: 80%;
+  margin-bottom: 10px;
+  width: 100%;
   text-align: left;
+}
+.subcontainer{
+  color: #FFF;
+  height: 2vw;
+  vertical-align: middle;
+  line-height: 2vw;
+  background-color: #1e3b5F;
+}
+.subcontainer2{
+  color: #1e3b5F;
+  height: auto;
+  padding: 10px;
+  vertical-align: middle;
+  line-height: 2vw;
+  background-color: #FCFCFC;
 }
 
 .author {
   font-weight: bold;
+  padding: 5px 10px;
+}
+.date {
+  display: flex;
+  font-size: 14px;
+  font-style: italic;
   padding: 5px 10px;
 }

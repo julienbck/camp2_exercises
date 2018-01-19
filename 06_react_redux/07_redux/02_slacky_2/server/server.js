@@ -3,6 +3,7 @@ const http = require("http");
 const WebSocket = require("ws");
 const server = require("http").createServer();
 const app = express();
+const moment = require('moment');
 
 // This will store the messages for the time of the session
 const messages = [];
@@ -23,7 +24,7 @@ wss.on("connection", function connection(ws, req) {
         return;
       case "NEW_MESSAGE":
         // Add the message to the list of messages
-        messages.push({ userName: message.userName, message: message.message });
+        messages.push({ userName: message.userName, message: message.message, date: moment().format('YYYY/MM/D HH:mm:ss') });
 
         // Sends all messages to all connected clients
         wss.clients.forEach((client) => {

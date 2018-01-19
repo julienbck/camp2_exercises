@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class Chat extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,6 @@ class Chat extends Component {
     // the component update, that way, the last message will always be visible
     this.messageListDiv.scrollTop = this.messageListDiv.scrollHeight;
   }
-
   render() {
     return (
       <div className="Chat">
@@ -41,8 +41,13 @@ class Chat extends Component {
           {this.props.messages.map((message, index) =>
             (
               <div className="message-container" key={index}>
-                <span className="author">{message.userName}</span>
-                <span className="message">{message.message}</span>
+                <div className="subcontainer">
+                  <span className="author">{message.userName}</span>
+                </div>
+                <div className="subcontainer2">
+                  <span className="date"> {message.date}</span>
+                  <span className="message">{message.message}</span>
+                </div>
               </div>
             )
           )}

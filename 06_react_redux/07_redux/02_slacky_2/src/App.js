@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import Login from "./Login";
 import Chat from "./Chat";
+import { createStore } from 'redux';
+
+
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +12,7 @@ class App extends Component {
     this.state = {
       userName: null,
       messages: [],
+      date: ""
     };
     // Attaching the websocket to our App so we can reuse it
     this.websocket = new WebSocket("ws://localhost:8080");
@@ -24,6 +28,7 @@ class App extends Component {
           return;
         case "MESSAGES":
           this.setState({ messages: message.data });
+          console.log(message.data);
           return;
       }
     });
@@ -44,16 +49,21 @@ class App extends Component {
       JSON.stringify({
         type: "NEW_MESSAGE",
         userName: this.state.userName,
-        message: message
+        message: message,
       })
     );
   };
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Slacky</h1>
+            {this.state.userName ? (
+            <p>
+            Hi {this.state.userName} !</p>
+          ) : (
+            <p>Welcome
+            </p>
+          )}
         </header>
 
         {this.state.userName ? (
@@ -65,5 +75,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
